@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 
 
-export default function Home() {
+export default function Form() {
   const [locationInput, setLocationInput] = useState("");
   const [minInput, setminInput] = useState("");
   const [maxInput, setMaxInput] = useState("");
