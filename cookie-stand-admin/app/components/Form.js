@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import ReportTable from './ReportTable'
 
+
 export default function Form() {
   const [locationInput, setLocationInput] = useState("");
   const [minInput, setminInput] = useState("");
