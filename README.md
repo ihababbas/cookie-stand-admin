@@ -6,4 +6,4 @@
 
 ![alt text](img1.png)
 ![alt text](img2.png)
-[PR](https://github.com/ihababbas/cookie-stand-admin/pull/1)
+* THE PULL REQUEST [PR](https://github.com/ihababbas/cookie-stand-admin/pull/1)
