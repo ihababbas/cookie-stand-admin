@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-
+import ReportTable from './ReportTable'
 
 export default function Form() {
   const [locationInput, setLocationInput] = useState("");
@@ -86,9 +86,19 @@ export default function Form() {
           </button>
         </form>
       </section>
+      
+
+      
 
       <section className="px-40 py-3 flex flex-wrap justify-center gap-3">
-        {data.length > 0 &&
+      {data.length === 0 && (
+          <div className="min-h-screen">
+            
+            <h2 className=" font-bold text-3xl">No Cookie Stands Available</h2>
+            </div>
+            )}
+        
+        {/*data.length > 0 &&
           data.map((item, index) => {
             return (
               <div
@@ -101,8 +111,21 @@ export default function Form() {
                 <p>Average Cookies Per Sale: {item.AvgInput}</p>
               </div>
             );
-          })}
-
+          })*/} 
+         
+         
+         
+         
+         
+         {data.length > 0 && (
+          <div >
+            
+            <ReportTable
+            data ={data}
+            
+            />
+            </div>
+            )}
       </section>
     </>
   );
