@@ -40,11 +40,11 @@ export default function Form() {
 
   return (
     <>
-      <section className="px-40 py-3 h-full ">
+      <section className="px-40 py-3 h-full dark:bg-black ">
         <h1 className=" font-bold text-3xl mb-2">
           Enter Data
         </h1>
-        <form onSubmit={handleSubmit} className = "flex items-center border-b border-teal-500 py-2">
+        <form onSubmit={handleSubmit} className = "flex items-center border-b border-teal-500 py-2 dark:bg-black ">
           <input
             id="location"
             name="location"
@@ -80,7 +80,7 @@ export default function Form() {
             />
           </div>
           <button
-            className="rounded font-medium text-black bg-green-300 px-3 py-2 hover:bg-green-100"
+            className="rounded font-medium text-black bg-green-300 px-3 py-2 hover:bg-green-100 dark:bg-slate-900 dark:bg-black dark:text-white"
             type="submit"
           >
             Add Record
@@ -91,7 +91,7 @@ export default function Form() {
 
       
 
-      <section className="px-40 py-3 flex flex-wrap justify-center gap-3">
+      <section className="px-40 py-3 flex flex-wrap justify-center gap-3 dark:bg-black dark:text-white">
       {data.length === 0 && (
           <div className="min-h-screen">
             
