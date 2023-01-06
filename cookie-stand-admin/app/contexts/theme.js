@@ -1,25 +1,28 @@
 'use client';
-// 1. create the provider, that will provide the global state to my app
-// 1.1 create the context
-// 1.2 create the context wrapper (provider)
+import { createContext, useEffect, useState } from "react";
 
-import { createContext, useEffect, useState } from "react"
-// 1.1 create the context
 export const ThemeContext = createContext();
 
-// 1.2 create the context wrapper (provider)
 export default function ThemeWrapper({children}){
-
     const [isDarkTheme, setIsDarkTheme] = useState(true);
+    const [inStorage, setInStorage] = useState("");
 
     function initialThemeHandle(){
-        // take the initial value
-        isDarkTheme && document.querySelector("body").classList.add("dark"); // add dark class to the body element
+        const inStorage = JSON.parse(localStorage.getItem('mode'))
+        if (inStorage === false){
+            setIsDarkTheme(inStorage)
+            console.log("inStorage",inStorage, "isDark", isDarkTheme)
+            document.querySelector("body").classList.remove("dark"); 
+        } else {
+
+            isDarkTheme && document.querySelector("body").classList.add("dark"); 
+        }
     }
     
     function toggleThemeHandler() {
         setIsDarkTheme(!isDarkTheme);
-        document.querySelector("body").classList.toggle("dark"); // add dark class to the body element
+        document.querySelector("body").classList.toggle("dark"); 
+        localStorage.setItem('mode', JSON.stringify(!isDarkTheme))
     }
     
     const globalState = {
@@ -27,7 +30,13 @@ export default function ThemeWrapper({children}){
         toggleThemeHandler
     }
 
-    useEffect(()=>initialThemeHandle());
+    useEffect(()=> {
+        const inStorage = JSON.parse(localStorage.getItem('mode'))
+        if (inStorage){
+            setInStorage(inStorage)
+        }
+        initialThemeHandle()
+    },[inStorage]);
 
     return(
         <ThemeContext.Provider value={globalState}>
