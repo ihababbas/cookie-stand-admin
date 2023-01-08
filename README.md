@@ -3,6 +3,8 @@
 #### 1-Jan-23  "lab 32"
 #### 4-Jan-23  "lab33"
 #### 6-Jan-23  "lab34"
+#### 8-Jan-23  "lab35"
+
 * A web application built with Next JS 13, where a user can enter his/her sales and view them in a card format to keep track of his/her sales.
 
 ![alt text](img1.png)
